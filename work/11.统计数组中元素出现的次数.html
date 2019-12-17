@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		
+		<script>
+			
+			var arr=[1,2,3,2,4,3,5,3,3,3];
+			
+			// 第一种方法，循环遍历查询数值
+			function count1(arr,item) {
+				var cou=0;//定义一个变量等于0
+				// forEach方法遍历数组
+				arr.forEach(function (ele) {.
+					//判断数组中的元素是否等于item
+					if (ele===item) {
+						// 如果等于item，则cou++
+						cou++;
+					}
+				});
+				return cou;
+			}
+			
+			console.log(count1(arr,3));
+			
+			// 第二种方法，使用filter方法检查所有符合条件的元素
+			function count2(arr,item) {
+				// 使用filter方法检查所有符合条件的元素
+				var cou=arr.filter(function (ele) {
+					// 返回所有等于tiem的元素数组
+					return ele===item;
+				});
+				// 返回符合条件的数组的长度
+				return cou.length;
+			}
+			
+			console.log(count2(arr,3));
+			
+					
+			
+			
+			
+		</script>
+		
+	</body>
+</html>

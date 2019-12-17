@@ -1,0 +1,53 @@
+.<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			
+				var arr=[1,2,3,4];
+					
+					// 第一种方法，数组拼接
+					function prepend(arr, item) {
+			            return [item].concat(arr);
+			        }
+					console.log(prepend(arr, 8));//[8, 1, 2, 3, 4]
+			
+					//第二种方法：先定义一个item数组，然后把arr的元素push到arr1中
+			        function prepend2(arr, item) {
+			            var arr1 =[];
+			            arr1.push(item);
+			           arr.forEach(function (ele) {
+			           	 arr1.push(ele);
+			           });
+			            return arr1;
+			        }
+					console.log(prepend2(arr, 8));//[8, 1, 2, 3, 4]
+				
+					//第三种方法，使用apply
+					function prepend3(arr, item) {
+						var arr1 = [item];
+						// 使用apply方法传入数组
+						[].push.apply(arr1,arr);
+						return arr1;
+					}
+					
+					console.log(prepend3(arr, 8));//[8, 1, 2, 3, 4]
+					
+					
+					//方法四：使用unshift:在数组头部插入指定元素
+						function prepend4(arr, item) {
+							var arr1 = arr.slice(0);
+							arr1.unshift(item);//返回值是数组的长度
+							return arr1;
+						}
+						
+						
+					console.log(prepend4(arr, 8));//[8, 1, 2, 3, 4]
+					
+					console.log(arr);// [1, 2, 3, 4]
+		</script>
+	</body>
+</html>

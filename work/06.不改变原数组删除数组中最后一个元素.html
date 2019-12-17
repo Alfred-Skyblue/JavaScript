@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		
+		<script>
+			
+			var arr=[1,2,3,4];
+			
+			// 用slice方法截取数组，从第一个截取到最后一个，不包含最后一个
+			function truncate(arr) {
+				return arr.slice(0,-1);
+			}
+			
+			console.log(truncate(arr));
+			
+			
+			
+			
+			// 用slice方法赋值给一个新数组，删除新数组中最后一个元素
+			function truncate2(arr) {
+				var arr1=arr.slice(0);
+				arr1.pop();
+				return arr1;
+			}
+			
+			console.log(truncate2(arr));
+			
+			console.log(arr);
+		</script>
+		
+		
+	</body>
+</html>

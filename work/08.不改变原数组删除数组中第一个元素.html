@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script>
+			
+					var arr=[1,2,3,4];
+					//第一种方法：使用shift移除第一个元素
+			        //shift是指在头部移除元素
+			        function curtail(arr) {
+			            var arr1 = arr.slice(0);
+			            arr1.shift();
+			            return arr1;
+			        }
+			
+					console.log(curtail(arr));
+					
+					// 第二种方法，使用push方法把arr中第二个到最后一个元素添加到空数组中
+					function curtail2(arr) {
+						var arr1 = [];
+						for (var i = 1; i < arr.length; i++) {
+							arr1.push(arr[i]);
+						}
+						return arr1;
+					}
+					console.log(curtail(arr));
+					
+					
+					console.log(arr);
+			
+		</script>
+		
+		
+		
+		
+	</body>
+</html>

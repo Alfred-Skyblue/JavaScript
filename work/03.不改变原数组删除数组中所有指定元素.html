@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script>
+			
+			var arr=[1,2,2,3,4,2,2];
+			
+			// 第一种方法filter数组过滤，返回过滤后的新数组(ES6)
+			function remove(arr,item) {
+				return arr.filter(function (ele) {
+					return ele!==item;
+				});
+			}
+			console.log(remove(arr,2));//[1,3,4];
+			
+			
+			// 第二种方法，使用slice方法赋值给另一个数组，删除另一个数组中指定的元素
+			function remove2(arr,item) {
+				var arr1=arr.slice(0);
+				// for循环方法遍历数组
+				for (var i = arr1.length; i>=0; i--) {
+						if (arr1[i]===item) {
+							// 如果元素等于item,则删除该元素
+							arr1.splice(i,1);
+							//此处不适用forEach循环，如果两个相邻的元素相同，则删除元素的时候元素的个数-1，索引值也需要-1，forEach控制不了
+						}
+				}
+				return arr1;
+			}
+			console.log(remove2(arr,2));//[1,3,4];
+			
+			// 第三种方法,定义一个空数组，使用push方法把不等于item的元素添加到空数组中，返回空数组
+			function remove3(arr,item) {
+				var arr1=[];//定义一个空数组
+				// forEach方法遍历数组
+				arr.forEach(function (ele) {
+					if (ele!==item) {
+						//如果元素不等于item,则把它追加到arr1中
+						arr1.push(ele);
+					}
+				});
+				return arr1;
+			}
+			console.log(remove3(arr,2));//[1,3,4];
+			
+			
+
+			
+			console.log(arr);// 原数组[1,2,3,4,2];
+		</script>
+		
+	</body>
+</html>

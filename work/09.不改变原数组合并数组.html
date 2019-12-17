@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script>
+			
+			
+			var arr1=[1,2,3,4,5];
+			var arr2=["a","b","c","d"];
+			
+			// 第一种方法，数组拼接
+			function concat1(arr1,arr2) {
+				return arr1.concat(arr2);
+			}
+			
+			console.log(concat1(arr1,arr2));
+			
+			
+			// 第二种方法push追加
+			function concat2(arr1,arr2) {
+				var arr=arr1.slice(0);
+				arr2.forEach(function (ele) {
+					arr.push(ele);
+				});
+				return arr;
+			}
+			console.log(concat2(arr1,arr2));
+			
+			//第三种方法，利用扩展运算符合并数组
+			function concat3(arr1,arr2) {
+				return [...arr1,...arr2];
+			}
+			console.log(concat3(arr1,arr2));
+			
+			
+			
+			console.log(arr1);
+			console.log(arr2);
+			
+		</script>
+		
+		
+	</body>
+</html>

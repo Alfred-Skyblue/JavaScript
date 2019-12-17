@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script>
+			
+			var arr=[1,2,3,4];
+			
+	
+			//第一种方法，使用splice方法插入
+			function insert1(arr, item, index) {
+			    var arr1 = arr.slice(0);//复制一个arr数组
+				// 往新数组中指定的位置插入元素
+			    arr1.splice(index,0,item);
+			    return arr1;
+			}
+			console.log(insert1(arr, 10, 3));
+	
+			
+			// 第二种方法，先复制前两个元素，将插入元素插入之后，再复制后两个元素
+			function insert2(arr, item, index) {
+				// 先复制arr的0-index索引的元素
+				var arr1 = arr.slice(0,index);
+				// 把item元素追加到arr1数组中
+				arr1.push(item);
+				//用concat方法把arr的index位置后面的所有元素拼接到arr1中
+				arr1=arr1.concat(arr.slice(index,arr.length));
+				return arr1;
+			}
+			console.log(insert2(arr, 10, 3));
+			
+			console.log(arr);
+			
+			
+		</script>
+		
+		
+	</body>
+</html>

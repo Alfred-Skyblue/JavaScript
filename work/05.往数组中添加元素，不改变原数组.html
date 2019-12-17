@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script>
+			var arr=[1,2,3,4];
+			
+			
+			//第一种方法,使用slice方法将元素赋值给一个新数组,然后往新数组里面追加item
+			function append(arr, item) {
+			            var arr1 = arr.slice(0);
+			            arr1.push(item);
+			            return arr1;
+			        }
+			
+			console.log(append(arr, 10));//[1, 2, 3, 4, 10]
+			
+			// 第二种方法,使用concat方法拼接数组，不会改变原数组
+			function append2(arr, item) {
+			            return arr.concat(item);
+			        }
+			console.log(append2(arr, 10));//[1, 2, 3, 4, 10]
+			
+			console.log(arr);//[1, 2, 3, 4]
+		</script>
+		
+		
+	</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			// 第一种方法:恒等运算符
+			function identity(val1, val2) {
+					//这题的意思应该是考===完全相等，
+					//除此之外应注意到的是NaN和+0与-0，这个在===中的判断是错误的，
+					//一是 +0 不等于 -0 ，二是 NaN 等于自身
+			    if(val1===val2){
+					// +0不等于-0；但是用===的话会返回true；所以要做额外的判断;
+					// 1/+0是Infinity，1/-0是-Infinity
+					return val1 !== 0 || val2 !== 0 || 1/val1 === 1/val2;
+			    }else {
+					//NaN等于NaN 但是NaN === NaN 等于false;所以做额外的判断
+			        return val1 !== val1 && val2!== val2;
+			    }
+			}
+			
+			//es6新增方法Object.is()
+			console.log(Object.is(NaN,NaN));//true
+			console.log(Object.is(1,'1'));//false
+			console.log(Object.is(0,true));//false
+			/*
+				1.==：等同，比较运算符，两边值类型不同的时候，先进行类型转换，再比较；
+				2.===：恒等，严格比较运算符，不做类型转换，类型不同就是不等；
+				3.Object.is()是ES6新增的用来比较两个值是否严格相等的方法，与===的行为基本一致。
+				
+				
+				1)先说===，这个比较简单，只需要利用下面的规则来判断两个值是否恒等就行了：
+				
+					如果类型不同，就不相等
+					如果两个都是数值，并且是同一个值，那么相等； 
+					值得注意的是，如果两个值中至少一个是NaN，那么不相等（判断一个值是否是NaN，可以用isNaN()来判断）。
+					如果两个都是字符串，每个位置的字符都一样，那么相等；否则不相等。
+					如果两个值都是同样的Boolean值，那么相等。
+					如果两个值都引用同一个对象或函数，那么相等，即两个对象的物理地址也必须保持一致；否则不相等。
+					如果两个值都是null，或者都是undefined，那么相等。
+					
+					
+				2)es6新的方法Object.is来比较两个值严格相等，它与严格比较运算符（===）基本一致，不同之处只有两个：一是+0不等于-0，二是NaN等于自身。
+				
+			*/
+		   
+		   
+		</script>
+	</body>
+</html>

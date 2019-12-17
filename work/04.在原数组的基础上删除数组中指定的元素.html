@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script>
+			
+			var arr=[1,2,2,3,4,2,2];
+			
+			// 使用splice方法在原数组中删除指定元素
+			function removeWithoutCopy(arr,item) {
+				// for循环遍历数组,倒着检测，不需要考虑删除元素时改变其他元素位置的问题
+				for (var i = arr.length; i>=0; i--) {
+						if (arr[i]===item) {
+							// 如果元素等于item,则删除该元素
+							arr.splice(i,1);
+						}
+				}
+				return arr;
+			}
+			
+			console.log(removeWithoutCopy(arr,2));// [1, 3, 4]
+			console.log(arr);// [1, 3, 4]
+			
+			
+		</script>
+		
+		
+		
+	</body>
+</html>

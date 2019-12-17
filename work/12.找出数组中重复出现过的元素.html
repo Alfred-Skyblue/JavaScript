@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		
+		<script>
+			
+			var arr=[1,2,3,3,3,4,2,2,4,4,5,6,7,6,6];
+			
+					//第一种方法，利用索引判断是否重复（使用了两次）
+			        function duplicates(arr) {
+			            var arr1 = [];//定义一个空数组
+						// forEach循环遍历数组
+			            arr.forEach(function (ele) {
+			                // 判断数组中元素的首个位置和最后一个位置不能相同，并且新数组中没有这个元素
+			                if (arr.indexOf(ele) !== arr.lastIndexOf(ele) && arr1.indexOf(ele) === -1){
+			                    arr1.push(ele);//将元素追加到新数组中
+			                }
+			            });
+			            return arr1;
+			        }
+			
+			
+			
+		</script>
+		
+		
+		
+	</body>
+</html>
