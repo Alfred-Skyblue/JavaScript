@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.content {
+				width: 800px;
+				height: 600px;
+				position: relative;
+				margin: 100px 200px;
+			}
+			.box {
+				width: 460px;
+				height: 300px;
+				border: 5px solid #666;
+				position: relative;
+			}
+			img {
+				width: 100%;
+				height: 100%;
+			}
+			
+			.content li {
+				list-style: none;
+				float: left;
+				width: 146px;
+				height: 100px;
+				background-color: #00008B;
+				margin-right: 10px;
+				margin-top: 20px;
+				border: 2px solid #8B008B;
+				cursor: pointer;
+			}
+			.content li:first-child{
+				border: 2px solid #f40;
+			}
+			.mask {
+				width: 100px;
+				height: 100px;
+				background-color: #ccc;
+				position: absolute;
+				
+				opacity: 0.7;
+				/* border: 1px solid #28ABFF; */
+				cursor: move;
+			}
+			.box .center {
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%,-50%);
+			}
+			.big {
+				width: 300px;
+				height: 350px;
+				position: absolute;
+				border: 2px solid #8558D6;
+				right: 0;
+				overflow: hidden;
+			}
+			.big img {
+				width: 1380px;
+				height: 1200px;
+			}
+			.bgimg {
+				margin-left: -540px;
+				margin-top: -425px;
+			}
+			h3 {
+				width: 100%;
+				height: 30px;
+				border: 1px solid #8B008B;
+				border-radius: 15px;
+				position: absolute;
+				top: 0;
+				background-color: rgba(0,0,0,.5);
+				text-align: center;
+				color: bisque;
+				text-shadow: 5px 5px 5px crimson;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div class="content">
+			
+			<!-- 大图div -->
+			<div class="big">
+				
+				<img src="images/1.jpg" id="bigimg" class="bgimg">
+				<!-- 大图标题 -->
+				<h3 id="tit">兰博基尼</h3>
+			</div>
+			<!-- 小图div -->
+			<div class="box">
+				<!-- 遮挡层 -->
+				<div class="mask center"></div>
+				<img src="images/1.jpg" id="bg">
+			</div>
+			
+			<!-- 图片选择 -->
+			<ul>
+				<li><img src="images/1.jpg" title="兰博基尼"></li>
+				<li><img src="images/ferrari.jpg" title="法拉利" id="ferrari"></li>
+				<li><img src="images/gtr.jpg" title="GTR"></li>
+			</ul>
+		</div>
+
+	
+		
+		<script src="common.js"></script>
+		<script>
+			
+			// 获取元素
+			
+			// 获取最外面的div
+			var content=document.querySelector(".content");
+			// 获取相框的div
+			var box=content.querySelector(".box");
+			// 获取大图的div
+			var big=content.querySelector(".big");
+			// 获取所有的li标签
+			var list=content.querySelectorAll("li")
+			// 获取遮挡层
+			var mask=content.querySelector(".mask");
+			
+			
+			// 循环遍历,为所有的li注册点击事件
+			for (var i = 0; i < list.length; i++) {
+				list[i].addEventListener("click",clickHandle,false);
+			}
+			function clickHandle() {
+				//把大图的图片,换成当前点击的li标签里面的图片
+				my$("bg").src=this.firstElementChild.src;
+				big.firstElementChild.src=this.firstElementChild.src;
+				
+				//把放大镜图片的标题设置成当前点击的图片
+				setInnerText(my$("tit"),this.firstElementChild.title);
+				//排他功能
+				for (var i = 0; i < list.length; i++) {
+					list[i].style.border="2px solid #8B008B";
+				}
+				this.style.border="2px solid #f40";
+			}
+			
+			// 为box注册鼠标按下事件
+			box.onmousedown=function (e) {
+				
+				//鼠标移动事件
+				box.onmousemove=function (e) {
+					//鼠标进入时,先移除遮挡层的水平垂直居中样式
+					mask.className="mask";
+					// 减去外边距和边框影响的效果并且让鼠标在遮挡层中间显示
+					var x=e.pageX-mask.offsetWidth/2-200-5;
+					var y=e.pageY-mask.offsetHeight/2-100-5;
+					console.log(x);
+					// 判断遮挡层的最小移动距离
+					x=x<0?0:x;
+					y=y<0?0:y;
+					
+					//判断遮挡层的最大可移动距离
+					//由于这里用到了box的宽度,所以需要考虑边框的问题,为了避免遮挡层超出边框的范围,所以这里需要减去边框的宽度
+					x=x>box.offsetWidth-mask.offsetWidth-10?box.offsetWidth-mask.offsetWidth-10:x;
+					y=y>box.offsetHeight-mask.offsetHeight-10?box.offsetHeight-mask.offsetHeight-10:y;
+					
+					//设置遮挡层的left和top
+					mask.style.left=x+"px";
+					mask.style.top=y+"px";
+					
+					// 大图的移动距离/大图的最大移动距离=遮挡层的移动距离/遮挡层的最大移动距离
+					// 大图的移动距离=大图的最大移动距离*遮挡层的移动距离/遮挡层的最大移动距离
+					
+					//大图的横纵最大移动距离
+					var maxX=my$("bigimg").offsetWidth-big.offsetWidth;
+					var maxY=my$("bigimg").offsetHeight-big.offsetHeight;
+					
+					// 大图的横纵移动坐标
+					var bigX=maxX*x/(box.offsetWidth-mask.offsetWidth-10);
+					var bigY=maxY*y/(box.offsetHeight-mask.offsetHeight-10);
+					//设置大图的移动距离
+					my$("bigimg").style.marginLeft=-bigX+"px";
+					my$("bigimg").style.marginTop=-bigY+"px";
+				};
+			};
+			
+			// 为box注册鼠标抬起事件
+			addEventListener(document,"mouseup",function () {
+				box.onmousemove=null;
+			});
+			
+			
+			//为box注册鼠标离开事件,初始化遮挡层和大图
+			addEventListener(box,"mouseleave",function () {
+				// 鼠标离开时,让遮挡层水平垂直居中,并且移除遮挡层的行内样式
+				mask.className="center mask";
+				mask.removeAttribute("style");
+				// 移除大图的行内样式,让div显示大图的中间位置
+				my$("bigimg").removeAttribute("style");
+			});
+
+				
+		</script>
+		
+		
+	</body>
+</html>

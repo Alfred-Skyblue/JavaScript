@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.content {
+				width: 800px;
+				height: 600px;
+				position: relative;
+				margin: 100px 200px;
+			}
+			.box {
+				width: 460px;
+				height: 300px;
+				border: 5px solid #666;
+				position: relative;
+				overflow: hidden;
+				cursor: crosshair;
+			}
+			img {
+				width: 100%;
+				height: 100%;
+			}
+			
+			.content li {
+				list-style: none;
+				float: left;
+				width: 146px;
+				height: 100px;
+				background-color: #00008B;
+				margin-right: 10px;
+				margin-top: 20px;
+				border: 2px solid #8B008B;
+				cursor: pointer;
+			}
+			.content li:first-child{
+				border: 2px solid #f40;
+			}
+			.mask {
+				width: 100px;
+				height: 100px;
+				background-color: #ccc;
+				position: absolute;
+				
+				opacity: 0.7;
+				/* border: 1px solid #28ABFF; */
+				cursor: move;
+			}
+			.box .center {
+				left: 0;
+				top: 0;
+				bottom: 0;
+				right: 0;
+				margin: auto;
+			}
+			.big {
+				width: 300px;
+				height: 350px;
+				position: absolute;
+				border: 2px solid #8558D6;
+				right: 0;
+				overflow: hidden;
+			}
+			.big img {
+				width: 1380px;
+				height: 1200px;
+			}
+			.bgimg {
+				margin-left: -540px;
+				margin-top: -425px;
+			}
+			h3 {
+				width: 100%;
+				height: 30px;
+				border: 1px solid #8B008B;
+				border-radius: 15px;
+				position: absolute;
+				top: 0;
+				background-color: rgba(0,0,0,.5);
+				text-align: center;
+				color: bisque;
+				text-shadow: 5px 5px 5px crimson;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div class="content">
+			
+
+			
+			<!-- Imgdiv -->
+			<div class="box">
+				<img src="images/1.jpg" id="bg">
+			</div>
+			
+			<!-- 图片选择 -->
+			<ul>
+				<li><img src="images/1.jpg" title="兰博基尼"></li>
+				<li><img src="images/ferrari.jpg" title="法拉利" id="ferrari"></li>
+				<li><img src="images/gtr.jpg" title="GTR"></li>
+			</ul>
+		</div>
+
+	
+		
+		<script src="common.js"></script>
+		<script>
+			
+			// 获取元素
+			
+			// 获取最外面的div
+			var content=document.querySelector(".content");
+			// 获取相框的div
+			var box=content.querySelector(".box");
+			// 获取box里面照片的宽和高
+			var imWidth=my$("bg").offsetWidth;
+			var imHeight=my$("bg").offsetHeight;
+			// 获取所有的li标签
+			var list=content.querySelectorAll("li");
+			
+			// 循环遍历,为所有的li注册点击事件
+			for (var i = 0; i < list.length; i++) {
+				list[i].addEventListener("click",clickHandle,false);
+			}
+			function clickHandle() {
+				//把大图的图片,换成当前点击的li标签里面的图片
+				my$("bg").src=this.firstElementChild.src;
+				
+				//排他功能设置边框颜色
+				for (var i = 0; i < list.length; i++) {
+					list[i].style.border="2px solid #8B008B";
+				}
+				this.style.border="2px solid #f40";
+			}
+			
+			
+			//为box注册鼠标移动事件
+			addEventListener(box,"mousemove",function (e) {
+				// 将图片放大三倍
+				my$("bg").style.width=imWidth*3+"px";
+				my$("bg").style.height=imHeight*3+"px";
+				// 获取鼠标的可视区坐标去掉外边距和边框的距离
+				var x=e.pageX-200-5;
+				var y=e.pageY-100-5;
+				
+				// 鼠标可移动的最小距离
+				x=x<0?0:x;
+				y=y<0?0:y;
+				
+				// 鼠标可移动的最大距离要去掉边框的宽度
+				x=x>this.offsetWidth-10?this.offsetWidth-10:x;
+				y=y>this.offsetHeight-10?this.offsetHeight-10:y;
+				console.log(x);
+				//大图的移动距离/大图可移动的最大距离=鼠标移动距离/鼠标可移动的最大距离
+				
+				//大图的移动距离=大图可移动的最大距离*鼠标移动距离/鼠标可移动的最大距离
+				
+				// 大图的最大移动距离需要减去box的边框宽度
+				var maxX=my$("bg").offsetWidth-this.offsetWidth-10;
+				var maxY=my$("bg").offsetHeight-this.offsetHeight-10;
+				
+				// 大图的移动距离
+				var bigImgX=maxX*x/(this.offsetWidth-10);
+				var bigImgY=maxY*y/(this.offsetHeight-10);
+				
+				
+				// 设置大图的移动距离
+				my$("bg").style.marginLeft=-bigImgX+"px";
+				my$("bg").style.marginTop=-bigImgY+"px";
+			});
+			
+			// 为box注册鼠标离开事件
+			addEventListener(box,"mouseleave",function () {
+				// 初始化图片
+				my$("bg").removeAttribute("style");
+			});
+				
+		</script>
+		
+		
+	</body>
+</html>
