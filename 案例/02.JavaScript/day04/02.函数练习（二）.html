@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			//输入一个日期,判断这个日期是这一年当中的第多少天
+
+
+			function getDays(year, month, day) {
+				//定义变量储存对应的天数
+				var days = day;
+				if (month == 1) {
+					return days;
+				}
+				//如果执行到这里,则说明用户输入的不是一月份,需要计算后面月份的天数
+				//定义一个数组来储存每个月的天数
+				var months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+				for (i = 0; i < month-1; i++) {
+					days += months[i];
+				}
+				if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0 && month > 2) { //判断输入的年份是不是闰年并且输入的月份大于2月,则需要+1天
+					days++;
+				}
+				return days
+			}
+			console.log(getDays(2016, 2, 2));
+
+			//求阶乘
+			function getJieCheng(arr) {
+				var product = 1;
+				for (i = 1; i <= arr; i++) {
+					product *= i;
+				}
+				return product;
+			}
+			console.log(getJieCheng(5));
+
+
+			//求阶乘的和(1)
+
+			function productSum(arr) {
+				var sum = 0;
+				for (var i = 1; i <= arr; i++) {
+					sum += getJieCheng(i)
+				}
+				return sum;
+			} //由此可推论出,函数里面是可以嵌套函数的
+			console.log(productSum(5));
+
+			//求阶乘的和(2)
+			function factorial(sum) {
+				var product = 1;
+				var sums = 0;
+				for (var i = 1; i <= sum; i++) {
+					product *= i; //求出阶乘
+					sums += product; //求出阶乘的和
+				}
+				return sums; //返回阶乘的和
+			}
+			console.log(factorial(5))
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

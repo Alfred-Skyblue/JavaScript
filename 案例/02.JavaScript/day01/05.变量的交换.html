@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			// //变量的交换,第一个思路:使用第三方变量进行交换
+			// var num1=10, num2=20;
+			// //把num1这个变量取出来,放在temp变量中
+			// var temp=num1;
+			// //把num2这个变量的值取出来放到num1变量中
+			// num1=num2;
+			// //把temp变量的值取出来,放在num2变量中
+			// num2=temp;
+			// console.log(num1);
+			// console.log(num2);
+
+
+			//第二种方式交换:一般适用于数字的交换
+			// var num1 = 10,
+			// 	num2 = 20;
+			// num1 = num1 + num2; //30
+			// num2 = num1 - num2; //10
+			// num1 = num1 - num2; //20
+			// console.log(num1);
+			// console.log(num2);
+
+
+			//注意:变量的名字不能重名
+
+			// var num = 10;
+			// var num = 20;
+			// console.log(num1);
+
+
+			//扩展的变量的交换----->位运算
+			var num1 = 10;
+			var num2 = 20;
+			num1 = num1 ^ num2;
+			num2 = num1 ^ num2;
+			num1 = num1 ^ num2;
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

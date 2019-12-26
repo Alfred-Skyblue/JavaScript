@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			function f1(){
+				//arguments---当做一个数组使用---伪数组
+				var sum=0;
+				for(var i=0;i<arguments.length;i++){
+					sum+=arguments[i];
+				}
+				return sum;
+			}
+			console.log(f1(20,30,40));
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			
+			//6.输出数组中间以字符串的形式"|"隔开
+			var States = ["中国", "韩国", "日本", "俄罗斯"];
+			var sta = ""; //空的字符串
+			for (var i = 0; i < States.length - 1; i++) {
+				sta += States[i] + "|"
+			}
+			console.log(sta + States[States.length - 1]);
+			
+			
+			//7.案例:去掉数组中重复的0,把其他的数据放到一个新的数组中
+			var arr=[10,0,20,30,0,40,0,50,60];
+			var newArr=[];
+			for (var i=0;i<arr.length;i++) {
+				if(arr[i]!=0){
+					newArr[newArr.length]=arr[i];
+				}
+			}
+			console.log(newArr);
+			
+			
+			//8.案例:翻转数组,把数组中的数据位置调换
+			var arr1=[10,20,30,40,50];
+			var arrs=[]
+			
+			for(var i=arr1.length-1;i>=0;i--){
+				arrs[arrs.length]=arr1[i];
+			}
+			arr1=arrs
+			console.log(arr1)
+			
+			
+			//9.案例:翻转数组,把数组中的数据位置调换2
+			var arr2=[10,20,30,40,50];
+			for(var i=0;i<arr2.length/2;i++){
+				var temp=arr2[i];
+				arr2[i]=arr2[arr2.length-1-i];
+				arr2[arr2.length-1-i]=temp;
+			}
+			console.log(arr2);
+			
+			
+		</script>
+
+	</head>
+	<body>
+	</body>
+</html>

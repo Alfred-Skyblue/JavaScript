@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			
+				//1.
+				var arr1 = [1, 2, 5, 1, 3, 7, 9, 5];
+				function MyArray() {//自定义构造函数创建对象
+					this.getarray = function(arr) {//添加方法
+						var array = [];//定义一个空数组
+						for (var i = 0; i < arr.length; i++) {
+							if (!array[arr[i]]) {
+								array.push(arr[i]);
+							}
+						}
+						return array;
+					};
+				}
+				var ma=new MyArray();
+				var myarr=ma.getarray(arr1);
+				console.log(myarr);
+				
+				/*
+				
+				//2.
+				
+				function MyArray() {//自定义构造函数创建对象
+					this.getarray = function() {//添加方法
+						var array = [];//定义一个空数组
+						for (var i = 0; i < arguments[0].length; i++) {
+							if (!array[arguments[0][i]]) {
+								array.push(arguments[0][i]);
+							}
+						}
+						return array;
+					};
+				}
+				var ma=new MyArray();
+				var myarr=ma.getarray(arr);
+				console.log(myarr);
+				
+				//3.
+				function MyArray() {//自定义构造函数创建对象
+					this.getarray = function() {//添加方法
+						var array = [];//定义一个空数组
+						for (var i = 0; i < arr.length; i++) {
+							if (!array[arr[i]]) {
+								array.push(arr[i]);
+							}
+						}
+						return array;
+					};
+				}
+				var ma=new MyArray();
+				var myarr=ma.getarray(1, 2, 5, 1, 3, 7, 9, 5);
+				console.log(myarr);
+				*/
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

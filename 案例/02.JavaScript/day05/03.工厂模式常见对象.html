@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			/*
+				如何获取该变量（对象）是不是属于什么类型
+				语法：
+					变量 instanceof 类型的名字----->输出是布尔类型，true表示是这个类型，false表示不是这个类型
+				
+				
+				在当前的对象的方法中，可以用this关键字代表当前的对象
+				
+			*/
+
+
+			//人的对象
+			var person = new Object();
+			person.name = "小黑";
+			person.age = 20;
+			person.sayHi = function() {
+				console.log("你好，我在吃饭，我叫：" + this.name); //在当前的对象的方法中，可以用this关键字代表当前的对象
+			};
+			person.sayHi()
+
+			console.log(person instanceof Object); //instanceof判断是不是这个类型,输出值为布尔类型
+
+			// 把创建对象的代码封装到一个函数里面,可以一次性创建多个对象
+			// 工厂模式创建对象
+			function createObject(name, age) {
+				var obj = new Object(); //创建一个对象
+
+				//给对象添加属性
+				obj.name = name;
+				obj.age = age;
+				//给对象添加方法
+				obj.eat = function() {
+					console.log("你好,我叫：" + this.name + "今年" + this.age + "岁");
+				}
+				return obj;
+			}
+			var students=createObject("社会王", 22);
+			students.eat();
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			//求500-600能第一个能被8和9同时整除的数字(利用break)
+			for (i = 500; i <= 600; i++) {
+				if (i % 8 == 0 && i % 9 == 0) {
+					break;
+				}
+			}
+					console.log(i);
+
+		
+			//计算200-300之间所有奇数的和,但是不能包括个位为3的数字(使用continue)
+			var sum=0;
+			for(var i=200;i<=300;i++){
+				if(i%2==0||i%10==3){
+					continue;
+				}
+				sum+=i;
+			}
+			console.log(sum);
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

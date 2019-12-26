@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			/*
+				JSON格式的数据:一般都是成对的,是键值对
+				JSON也是一个对象,数据都是成对的,一般JSON格式的数据无论是键还是值都是用双引号括起来的
+			
+			
+			*/
+		    
+		   /*
+				var json = {
+				  "name": "小明",
+				  "age": "10",
+				  "sex": "男"
+				};
+			*/
+		   
+		   
+			/*
+				function Thisect(name,age,play){
+					this.name=name;
+					this.age=age;
+					this.play=play;
+				}
+				var sky=new Thisect("小红",20,"打篮球");
+			*/
+			
+				var json = {
+				  "name": "小明",
+				  "age": "10",
+				  "sex": "男"
+				};
+
+			
+			//key是一个变量,这个变量中存储的是该对象的所有的属性的名字
+			//遍历对象不能通过for循环,因为对象是无序的,但是可以通过for  in循环
+			for (var key in json){
+				console.log(key+":"+json[key]);
+			}
+			
+			
+			
+		</script>
+		
+		
+		
+		
+	</head>
+	<body>
+	</body>
+</html>

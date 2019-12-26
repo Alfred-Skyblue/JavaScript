@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			//字面量方式创建对象
+			
+			
+			//创建一个电脑对象
+			var computer={
+				name:"电脑",
+				color:"红色",
+				weight:8,
+				model:"华硕",
+				movie:function(){
+					console.log("我可以看电影");
+				},
+				game:function(){
+					console.log("我可以玩LOL");
+				},
+				code:function(){
+					console.log("我还可以敲代码");
+				}
+				
+			};
+			console.log(computer.name);
+			console.log(computer.color);
+			console.log(computer.model);
+			computer.movie();
+			computer.game();
+			computer.code();
+			
+			
+			//创建一个车的对象
+			
+			var car={
+				
+				name:"i8",
+				color:"蓝色",
+				model:"宝马",
+				manned:function(){
+					console.log("我可以载人");
+				},
+				cargo:function(){
+					console.log("我还可以拉货");
+				},
+			}
+			console.log(car.name);
+			console.log(car.color);
+			console.log(car.model);
+			car.manned();
+			car.cargo();
+		</script>
+		
+		
+	</head>
+	<body>
+	</body>
+</html>

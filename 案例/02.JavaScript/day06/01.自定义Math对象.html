@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			//自己定义一个对象,实现系统的Math.max方法
+			function MyMax(){
+				//求所有数字当中的最大值
+				this.getMax=function(){
+					var max=arguments[0];
+					for(var i=0;i<arguments.length;i++){
+						if(max<arguments[i]){
+							max=arguments[i];
+						}
+						
+					}
+					return max;
+				}
+				
+			}
+			//创建对象
+			var ma=new MyMax();
+			var myRet=ma.getMax(20,30,35,40,80,90);
+			console.log();
+			
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

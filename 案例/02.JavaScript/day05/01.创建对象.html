@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			/*
+				创建对象有三种方式：
+					1.调用系统的构造函数创建对象：
+					var 变量名= new Object(); Object 是系统的构造函数
+					2.自定义构造函数创建对象（结合第一种和需求通过工厂模式创建对象）
+					3.字面量的方式创建对象
+					
+			
+			*/
+
+			//第一种创建对象的方式
+			//实例化对象
+			var obj = new Object();
+			//对象有特征(属性)和行为(方法)
+
+			//添加属性	对象.名字=值;
+			obj.name = "小杨";
+			obj.age = 25;
+			obj.sex = "男"
+			//添加方法	对象.名字=函数;
+			obj.eat = function() {
+				console.log("我喜欢吃土豆牛肉辣椒");
+			};
+			obj.play = function() {
+				console.log("我喜欢跑步，打篮球，打乒乓球")
+			}
+			obj.cook = function() {
+				console.log("洗菜")
+				console.log("切菜")
+				console.log("下锅")
+				console.log("放料")
+				console.log("出锅")
+				console.log("吃")
+			}
+			console.log(obj.name);
+			console.log(obj.age);
+			console.log(obj.sex);
+			obj.eat();
+			obj.play();
+			obj.cook();
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

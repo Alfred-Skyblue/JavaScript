@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			//10.案例.求班级所有人成绩的平均值,最大值,最小值,和总成绩.
+			var perCount = parseInt(prompt("请输入班级人数")); //输入每个班组的人数
+			var perScores = []; //循环方式录入每个人的成绩
+			for (var i = 0; i < perCount; i++) {
+				perScores[perScores.length] = parseInt(prompt("请输入第" + (i + 1) + "个人的成绩"));
+
+			}
+			console.log(perScores);
+
+
+
+
+			var sum = 0; //求总成绩
+			var max = perScores[0]; //最高成绩
+			var min = perScores[0]; //最低成绩
+			for (var i = 0; i < perScores.length; i++) {
+				sum += perScores[i]; //求和
+
+
+				if (max < perScores[i]) { //求最高成绩
+					max = perScores[i];
+				}
+				if (min > perScores[i]) { //求最低成绩
+					min = perScores[i];
+				}
+			}
+			console.log("总成绩" + sum);
+			console.log("最高成绩" + max);
+			console.log("最低成绩" + min);
+			console.log("平均成绩" + (sum / perCount));
+		</script>
+
+	</head>
+	<body>
+	</body>
+</html>

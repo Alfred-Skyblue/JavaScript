@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			//冒泡排序
+			var arr = [10, 30, 80, 120, 60, 40, 20];
+			function bubbling(arr) {
+				for (var j = 0; j < arr.length - 1; j++) {
+					for (var i = 0; i < arr.length - 1 - j; i++) {
+						if (arr[i] > arr[i + 1]) {
+							var temp = arr[i];
+							arr[i] = arr[i + 1];
+							arr[i + 1] = temp;
+						}
+					}
+				}
+				return arr;
+			}
+			console.log(bubbling(arr));
+			
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

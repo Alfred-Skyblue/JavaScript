@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			// 自定义构造函数创建对象,需要自定义一个构造函数,然后才能创建对象
+			//函数和构造函数的区别是:构造函数的首字母是大写的,函数的首字母是小写的
+			function Person(name,age){//自定义构造函数
+				this.name=name;
+				this.age=age;
+				this.sayHi=function(){
+					console.log("我叫："+this.name+"，今年"+this.age+"岁");
+				};
+			}
+			
+			//通过自定义的构造函数来创建对象
+			var arr= new Person("社会王",18);
+			console.log(arr.name);
+			console.log(arr.age);
+			arr.sayHi();
+
+			
+			
+			
+			
+		</script>
+		
+		
+		
+	</head>
+	<body>
+	</body>
+</html>

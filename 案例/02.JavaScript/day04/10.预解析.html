@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+		/*
+			//预解析:提前解释代码
+			
+			
+			//预解析:就是在解析代码之前
+					把变量的声明提前了---提前到当前所在作用域的最上面
+					函数的声明也会被提前---提前到当前所在作用域的最上面
+			
+		*/	
+		/*	
+			//如果当前页面中没有num,那么就会报错,如果num的初始化在console的下面
+			//会将变量的声明提前,但是并不会赋值,所以就会报undefined.这就是js的预解析
+			console(num);
+			var num=20;
+		*/	
+	   
+	    
+			//函数调用的时候,把会函数的声明提升到作用域的上面
+				f1();//调用
+				var num=20;//这个变量的声明会提升到变量使用之前
+				function f1() {
+				console.log(num);
+				//var num=10;
+				}
+			
+			
+				//预解析把变量的声明提前了
+				
+				
+				f2();
+				console.log(num1);
+				var num1=10;
+				function f2() {
+				console.log(num1);
+				}
+				
+				
+		</script>
+		
+	</head>
+	<body>
+	</body>
+</html>

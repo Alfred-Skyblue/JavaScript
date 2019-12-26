@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			//提示用户输入班级人数,每个人的成绩,求平均成绩,总成绩,最高分,最低分
+			var perCount=parseInt(prompt("请输入班级人数"));//提示用户输入人数,然后转为整数
+			
+			var perScores=[];//定义数组,储存每个人的成绩
+			
+			for(var i=0;i<perCount;i++){//循环的方式录入每个人的成绩
+				perScores[perScores.length]=parseInt(prompt("请输入第"+(i+1)+"个人的成绩"));
+			
+			}
+			//求总成绩
+			var sum=0;
+			var avg=0;
+			var max=perScores[0];
+			var min=perScores[0];
+			for (var i=0;i<perScores.length;i++){
+				sum+=perScores[i];
+			}
+			for(var i=0;i<perScores.length;i++){
+				if(max<perScores[i]){
+					max=perScores[i];
+				}
+			}
+			for(var i=0;i<perScores.length;i++){
+				if(min>perScores[i]){
+					min=perScores[i];
+				}
+			}
+			
+			console.log("总成绩："+sum);
+			console.log("平均成绩："+sum/perCount);
+			console.log("最高成绩："+max);
+			console.log("最低成绩："+min);
+			
+		</script>
+		
+	</head>
+	<body>
+	</body>
+</html>

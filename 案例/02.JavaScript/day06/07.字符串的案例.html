@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			//字符串案例
+
+		
+			//1.提取某个索引到指定位置的字符串
+			var str = "我的家在东北,东北的天气很优美";
+			var key = "东北"; //索引开始的位置
+			var index = str.indexOf(key); //获取该位置的索引值
+			str = str.substr(index, 5); //从key到指定的位置提取字符串
+			console.log(str);
+			
+			//2.找到则个字符串中所有的“O”出现的位置
+			var str1 = "hello wod odd ott fbo nhyo";
+			var index = 0;
+			var key = "o";
+			while ((index = str1.indexOf(key, index)) != -1) { //while循环求"o"出现位置
+				console.log(index);
+				index += key.length;
+			}
+			
+			for (var i = 0; i < str1.length; i++) { //for循环求"o"出现位置
+				if (str1.charAt(i) == key) {
+					console.log(i);
+				}
+			}
+		/*
+			//3.找到这个字符串中每个字符出现了几次
+
+			var str3 = "whatOareYyouYnoYshaHleiHoHmyHgod";
+			// 把所有的字母都变成小写
+			str3 = str3.toLowerCase();
+			var obj = {}; //创建一个空对象,把字母作为键,把次数作为值
+			// 循环遍历字符串,获取每个字母
+			for (var i = 0; i < str3.length; i++) {
+				var key = str3[i]; //定义一个变量,代表字符串的每个字母(obj的属性)
+				//判断obj这个对象中,有没有这个属性
+				if (obj[key]) {
+					obj[key]++;
+				} else {
+					obj[key] = 1;
+				}
+			}
+			console.log(obj);
+
+			//遍历对象
+			for (var key in obj) {
+				console.log(key + ":" + obj[key]);
+			}
+		*/	
+	   /*
+			var str6 = "whatOareYyouYnoYshaHleiHoHmyHgod";
+			
+			str6=str6.toLowerCase();
+			var obj={};
+			
+			for(var i=0;i<str6.length;i++){
+				var key=str6[i];
+				if (obj[key]) {
+					obj[key]++;
+				} else{
+					obj[key]=1;
+				}
+			}
+			console.log(obj);
+			for(var key in obj){
+				console.log(key+":"+obj[key]);
+			}
+		*/
+			var str8 = "whatOareYyouYnoYshaHleiHoHmyHgod";
+			
+			str8=str8.toLowerCase();//将str8的字母全部转换为小写
+			var obj={};//定义一个函数,储存str8的所有字母
+			for(var i=0;i<str8.length;i++){//循环判断遍历str8
+				var key=str8[i];//定义一个变量作为str8中的每个字符属性
+				if (obj[key]) {//判断obj中有没有key这个
+					obj[key]++;//如果有这个属性,则属性值+1
+				} else{
+					obj[key]=1;//如果没有这个属性,则给这个属性添加到函数中,属性值等于1
+				}
+			}
+			console.log(obj);
+			for (var key in obj) {//循环遍历对象,输出它的属性值
+				console.log(key+":"+obj[key]);
+			}
+		</script>
+
+
+
+	</head>
+	<body>
+	</body>
+</html>

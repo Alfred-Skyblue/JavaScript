@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			
+			//创建对象可以用["属性名"]来设置,用来代替点语法,但是中括号里面的属性名必须要加引号
+			
+			
+			
+			var dog={
+				name:"小黑",
+				age:6,
+				play:function(){
+					console.log("喜欢出去浪");
+					
+				}
+			};
+			
+			dog["name"]="小黑";
+			console.log(dog.name);
+			
+			dog.play();
+			dog["play"]();
+			
+			
+			
+		</script>
+		
+	</head>
+	<body>
+	</body>
+</html>

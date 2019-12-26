@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			//求两个数的最大值
+			function getMax(x, y) {
+				return x > y ? x : y; //三元表达式判断最大值
+			}
+			console.log(getMax(10, 20));
+
+
+			//求三个数的最大值
+			function getThreeMax(x, y, z) {
+				return x > y ? (x > z ? x : z) : (y > z ? y : z); //嵌套三元表达式判断最大值
+			}
+			console.log(getThreeMax(80, 60, 40));
+
+
+			//判断一个数字是不是质数
+			function prime(num) {
+				for (var i = 2; i < num; i++) {
+					if (num % i == 0) { //如果num和比它小的数字取余等于0,那么就证明num不是质数,返回false
+						return false;
+					} //end if
+				} //end for
+
+
+				return true; //如果到了这里,就证明for循环中判定num没有被别的数字整除,返回true
+			}
+			console.log(prime(31) ? "质数" : "不是质数");
+
+
+
+			//求两个数字的差
+			function getSub(x, y) {
+				return x - y;
+			}
+			console.log(getSub(20, 10));
+			
+			//求一组数字中的最大值
+			function getMax(array){
+				var max=array[0];//假设max是数组当中的最大值
+				for(var i=0;i<array.length;i++){//循环比较数组中的值
+					if(max<array[i]){//判断数组中的值是否大于max
+						max=array[i];//如果数组中其它值大于max,那么max等于array[i]
+					}
+				}
+				return max;
+			}
+			console.log(getMax([10,20,30,80,60,40]));
+			
+			
+			//求数组当中的最小值
+			function getMin(array){
+				var min=array[0];//假设min是数组中的最小值
+				for(var i=0;i<array.length;i++){//循环判断数组中的最小值
+					if(min>array[i]){
+						min=array[i];
+					}
+				}
+				return min;
+			}
+			console.log(getMin([10,20,30,8,40,50]));
+			
+			//求一组数字的和
+			function getSum(array){
+				var sum=0;
+				for(var i=0;i<array.length;i++){
+					sum+=array[i];
+				}
+				return sum;
+			}
+			console.log(getSum([10,20,30,40,50]));
+		</script>
+
+
+	</head>
+	<body>
+	</body>
+</html>

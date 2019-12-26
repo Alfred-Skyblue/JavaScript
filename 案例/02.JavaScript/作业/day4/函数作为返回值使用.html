@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+		//函数是可以作为返回值使用的:
+		function f1() {
+		  console.log("f1函数调用了");
+		  return function () {
+		    console.log("这是一个函数");
+		  };
+		}
+		
+		var fn=f1();//调用
+		//fn就是一个函数了
+		fn();
+		
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

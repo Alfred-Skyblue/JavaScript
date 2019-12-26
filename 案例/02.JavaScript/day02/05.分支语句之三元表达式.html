@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			/*
+			 * 三元表达式
+			 * 
+			 * 运算符号:  ?  :
+			 * 
+			 * 两个分支,最终的结果是两个分支中的一个,像这种情况可以使用三元表达式
+			 * 语法:
+			 *  var 变量=表达式1?表达式2:表达式3;
+			 *  执行过程:
+			 *  表达式1的结果是true还是false,如果是true则执行表达式2,然后把结果给变量
+			 *  如果表达式1的结果是false,则执行表达式3,把结果给变量
+			 *
+			 *
+			 *
+			 */
+			//练习1:取两个数字的最大值
+			var x = 16,
+				y = 20;
+			var result1 = x > y ? x : y;
+			console.log(result1);
+
+
+			//练习2:判断成年未成年
+			var age = 16;
+			var result2 = age >= 18 ? "成年" : "未成年";
+			console.log(result2);
+		</script>
+
+	</head>
+	<body>
+	</body>
+</html>

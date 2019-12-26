@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			//声明变量并初始化
+			//var num = 10;
+			//js中有哪些数据类型
+			//js中的原始诗句类型:number,string,boolean,null,undefined,object
+			/*
+				number:数字类型(整数和小数)
+				string：字符串类型（的值一般都是用单引号或者双引号括起来的）
+				boolean：布尔类型（只有两个值，true（真1），false（假0））
+				null:空类型，值只有一个：null，一个对象指向为空了，此时可以赋值为null，
+				undefined：未指定，值只有一个：undefined，什么情况下的结果是undefined
+				变量声明了，没有赋值，结果是undefined
+				函数没有明确返回值，如果接受了，结果也是undefined
+				如果一个变量的结果是undefined和一个数字进行计算，结果NaN不是一个数字，也没有意义
+				object：对象---->
+			*/
+			var num;
+			console.log(num+10);//NaN---not an number---->不是一个数字
+			/*
+			var num;
+			console.log(num)
+			变量声明了，没有赋值，结果是undefined
+			*/
+			// var sex1 = true;
+			// var sex2 = false;
+			//如何获取这个变量的数据类型是什么？使用typeof来获取
+			//typeof	的使用语法
+			/*
+				typeof 变量名
+				typeof（变量名）
+				这两种方式都可以获取这个变量的数据类型
+			*/
+		
+		   var num=10;
+		   var str="小黑"
+		   var flag=true;
+		   var nll=null;
+		   var undef;
+		   var obj=new Object();
+		   //使用typeof来获取变量的类型
+		   console.log(typeof num);//number
+		   console.log(typeof str);
+		   console.log(typeof flag);
+		   console.log(String(nll));
+		   console.log(typeof undef);
+		   console.log(typeof obj);
+		
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

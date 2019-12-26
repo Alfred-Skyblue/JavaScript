@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			/*
+				自定义构造函数创建对象的时候，发生了四件事
+				1.在内存中开辟空间（申请一块内存），来存储创建的新的对象
+				2.把this设置为当前的对象
+				3.设置对象的属性和方法值
+				4.把this这个对象返回
+				
+			
+			
+			*/
+			//自定义构造函数
+			function Person(name,age){
+				this.name=name;
+				this.age=age;
+				this.sayHi=function(){
+					console.log("我叫："+this.name+",今年"+this.age+"岁");
+				};
+			}
+			//创建对象
+			var dog=new Person("哮天犬",8);
+			console.log(dog.name);
+			console.log(dog.age);
+			dog.sayHi();
+		</script>
+		
+	</head>
+	<body>
+	</body>
+</html>

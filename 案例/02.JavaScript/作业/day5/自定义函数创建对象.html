@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			//自定义构造函数方式创建对象
+			
+			
+			//创建一个电脑对象
+			function Computer(name,color,kg,model){
+				this.name=name;
+				this.color=color;
+				this.weight=kg;
+				this.model=model;
+				this.movie=function(){
+					console.log("我的名字叫"+this.name+"，我的颜色是"+this.color+"色，我的重量有"+this.weight+"kg,我是"+this.model+"品牌的，我可以看电影，我可以玩lol，我还可以敲代码。");
+				};
+			}
+			var comp=new Computer("电脑","天蓝",8,"联想");
+			console.log(comp.name);
+			console.log(comp.model);
+			comp.movie();
+			
+			
+			//创建一个车的对象
+			function Car(name,color,weight,model){
+				this.name=name;
+				this.color=color;
+				this.weight=weight;
+				this.model=model;
+				this.manned=function(){
+					console.log("我是一辆"+this.model+this.name+"我身披"+this.color+"战袍，体重"+this.weight+"公斤，我可以载人，我还可以拉货");
+				};
+			}
+			var carGtr=new Car("GTR","红色","1800","日产");
+			console.log(carGtr.name);
+			console.log(carGtr.color);
+			console.log(carGtr.model);
+			carGtr.manned();
+			
+			
+			//创建一个按钮对象
+			
+			function Button(name,width,color,height){
+				this.name=name;
+				this.width=width;
+				this.backgroundcolor=color;
+				this.height=height;
+				this.click=function(){
+					console.log("我是一个"+this.name+"我的长度是"+this.width+"px,我的高度是"+this.height+"px，我的背景颜色是"+this.backgroundcolor+",我可以点击,我还可以让鼠标进入");
+				};
+			}
+			
+			var but=new Button("按钮",20,"天蓝色",10);
+			console.log(but.name);
+			console.log(but.width);
+			console.log(but.height);
+			console.log(but.backgroundcolor);
+			but.click();
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

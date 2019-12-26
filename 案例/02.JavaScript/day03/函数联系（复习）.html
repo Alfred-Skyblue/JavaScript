@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			// 求两个数字的和
+			function consoleSum(num1, num2) {
+				var sum = num1 + num2;
+				console.log(sum);
+			}
+			consoleSum(60, 70);
+			//求三个数字的和
+			function consoleSum2(num1,num2,num3) {
+				var sum = num1 + num2 + num3;
+				console.log(sum);
+			}
+			consoleSum2(10,20,30);
+			//求两个数字的最大值
+			function consoleMax(x,y) {
+				console.log(Math.max(x, y));
+			}
+			consoleMax(30,50);
+
+			//求三个数字的最大值
+			function consoleMax2(x,y,z) {
+				console.log(Math.max(x, y, z));
+			}
+			consoleMax2(20,80,60);
+			
+			//求1-100之间所有数字的和
+			function everySum(){
+				var sum=0;
+				for(var i=1;i<=100;i++){
+					sum+=i;
+				}
+				console.log(sum);
+			}
+			everySum();
+			
+			function colsoleArr(){
+				var sum=0;
+				var arr=[10,20,30,40,50];
+				for(var i=0;i<arr.length;i++){
+					sum+=arr[i];
+				}
+				console.log(sum);
+			}
+			colsoleArr();
+		</script>
+
+
+
+	</head>
+	<body>
+	</body>
+</html>

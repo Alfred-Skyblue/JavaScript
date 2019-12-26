@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			
+			
+			
+			//存一万本金,求五年后本金+利息为多少
+			var sum1=10000;//本金
+			//var interest=0.003;
+			for(var i=0;i<5;i++){
+				sum1+=sum1*0.003;//每一年的本金等于本金+利息循环5次
+			}
+			console.log(sum1)
+			
+		//有个人想知道，一年之内一对兔子能繁殖多少对？于是就筑了一道围墙把一对兔子关在里面。已知一对兔子每个月可以生一对小兔子，而一对兔子从出生后第3个月起每月生一对小兔子。假如一年内没有发生死亡现象，那么，一对兔子一年内（12个月）能繁殖成多少对？（兔子的规律为数列，1，1，2，3，5，8，13，21）	
+			
+			var num1=1;//一月份是
+			var num2=1;//二月份
+			var sums=0;
+			for(var i=3;i<=12;i++){
+					sums=num1+num2;
+					num1=num2;
+					num2=sums;
+			}
+			console.log(sums);
+			
+			
+			//三角形案例
+			for (var i = 1; i <= 8; i++) {
+				for (var k = 1; k <= 8 - i; k++)
+					document.write("&ensp;");
+				for (var j = 1; j <= 2 * i - 1; j++)
+					document.write("★");
+				document.write("<br>");
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

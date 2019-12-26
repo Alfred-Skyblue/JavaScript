@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			//var num = 12;
+			/*
+				数字类型：整数和小树
+				num=20；整数
+				mun=10.06；小数，（其他语言中，浮点型---单精度，双精度浮点）
+				所有的数字都是属于numbei类型
+				其他的语言：
+					整数类型：int
+					单精度浮点型：float
+					双精度浮点型：double
+				
+				
+				
+				数字：
+					二进制：遇二进一
+					0000001---1
+					0000010---2
+					0000011---3
+					0000100---4
+					八进制：遇八进一
+					十进制：遇十进一
+					
+					
+			*/
+		   
+		   /*
+				js中而已表示那些进制
+				var num=10；十进制
+				var num2=012； 八进制
+				var num3=0a123; 十六进制
+		   
+		   
+		   */
+		 // var num=0x1a;
+		 // console.log (num)
+		</script>
+		
+		<script>
+			//数字类型有范围:	最小值和最大值
+			// console.log(Number.MAX_VALUE);//数字类型的最大值
+			// console.log(Number.MIN_VALUE);//数字类型的最小值
+			
+			
+			
+			//不要用小数去验证小数
+			// var x=0.1;
+			// var y=0.2;
+			// var sum=x+y;
+			// console.log(sum==0.3)
+			
+			
+			//不要用NaN去验证是不是NaN
+			// var num;
+			// console.log(num+10==NaN)
+			// console.log("您好"=="我好")
+			
+			//如何验证这个结果是不是NaN,应该使用isNaN()
+			var num;//变量声明了没有赋值,结果是:undefined
+			var sum=num+10;
+			console.log(sum)
+			console.log(isNaN(sum))
+			//不是一个数字？
+			//不是数字结果为true,是数字结果为false
+			//判断结果是不是数字,可以利用isNaN(变量名)
+		</script>
+	<script>
+		/*
+			总结：
+				数字类型：number类型
+				无论是整数还是小树都是数字类型
+				不要用小数验证小数
+				不要使用NaN判断是不是NaN，应该使用isNaN（值或者变量名）
+				想要表示十进制：就是正常的数字
+				想要表示八进制：以0开头
+				想要表示十六进制：以0x开头
+		
+		*/
+	</script>
+	</head>
+	<body>
+	</body>
+</html>

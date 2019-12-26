@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title></title>
+	<script>
+			var a = 25;
+	
+			function abc() {
+				alert(a); //undefined
+				var a = 10;
+			}
+			abc();
+			console.log(a); //25
+	
+	
+	
+			
+			var a = 18;
+	
+			function f1() {
+				var b = 9;
+				console.log(a); //undefined
+				console.log(b);
+				var a = 9;
+			}
+			f1();
+	
+	
+		
+			f1();//函数调用把函数的声明提前
+			console.log(c);
+			console.log(b);
+			console.log(a);
+			function f1() {
+				var a = 9;//a是局部变量,只能在函数内部使用
+				
+				//b和c前面没有var.是隐式全局变量外面可以访问
+				b = 9;
+				c = 9;
+				console.log(a);
+				console.log(b);
+				console.log(c);
+				
+			}
+			
+			
+			f1();//因为f1当前是变量,所以预解析会提前把f1的变量声明提前
+			var f1=function () {
+			   console.log(a);
+			   var a=10;
+			 };
+			
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			//计算n个数字的和
+
+
+			//定义一个函数,如果不确定用户是否传入的参数,或者说不知道用户传入了几个参数,没办法计算,但是如果在函数中知道了参数的个数,也知道了每个参数的值,可以定义arguments为一个伪数组,来储存传入的参数
+			function f1() {
+				var sum = 0;
+				for (var i = 0; i < arguments.length; i++) { //假设传入的值是一个伪数组.循环遍历数组求和
+					sum += arguments[i];
+				}
+				return sum;
+			}
+			console.log(f1(10, 20, 30, 40, 50));
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

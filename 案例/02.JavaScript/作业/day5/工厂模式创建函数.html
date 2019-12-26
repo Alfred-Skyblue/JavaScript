@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			//工厂模式创建对象
+			
+			function carobj(name,color,model){
+				var obj=new Object();//创建一个对象
+				
+				//添加属性
+				obj.name=name;
+				obj.model=model;
+				obj.color=color;
+				obj.manned=function(){//添加方法
+					console.log("我可以飙车");
+				};
+				return obj;//把对象作为返回值
+			}
+			var car=carobj("i8","蓝色","宝马");
+			console.log(car.name);
+			console.log(car.model);
+			console.log(car.color);
+			car.manned();
+			
+			
+			/*
+				工厂模式和构造函数创建对象下区别
+				1.工厂模式方法首字母是小写
+				2.工厂模式函数中有new创建对象操作
+				3.工厂模式有返回值操作
+			*/
+			
+			
+		</script>
+		
+	</head>
+	<body>
+	</body>
+</html>

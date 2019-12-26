@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+				//转换为数字类型
+					//1.转换为数字Number
+						console.log(Number("13.5"));//转换为数字类型13.5
+						console.log(Number("13.5s"));//NaN表示不是一个数字
+						console.log(Number("q13.5"));//NaN
+						
+					//2.转换为整数parseInt
+						console.log(parseInt("18.5"));//只显示整数18
+						console.log(parseInt("s18.5"));//NaN遇到非数字结束
+						console.log(parseInt("1w5"));//1
+						console.log(parseInt("18aw"));//18
+
+					//3.转换为小数parseFloat
+						console.log(parseFloat("32.54"));//32.54
+						console.log(parseFloat("32w.54"));//32
+						console.log(parseFloat("3sa2.54"));//3
+						console.log(parseFloat("a32.5dw4"));//NaN
+						console.log(parseFloat("32.54d"));//32.54
+				//总结:想要转整数,用parseInt(),想要转小数用parseFloat(),想要转数字用Number(要比另外两种方式严格)
+														
+				//转换为字符串类型
+					var nom1=20;
+					console.log(nom1.toString());//转换为字符串类型20
+					console.log(String(nom1));//转换为字符串类型20
+					// 如果变量有意义,用toString()进行转换
+					// 如果变量没有意义,用String()进行转换
+					
+				//转换为布尔类型
+				console.log(Boolean(10));//true
+				console.log(Boolean(10.5));//true
+				console.log(Boolean(0));//false
+				console.log(Boolean("作业"));//true
+				console.log(Boolean("02作业"));//true
+				console.log(Boolean(5+8));//true
+				console.log(Boolean(null));//空类型false
+				console.log(Boolean(undefined));//未指定类型没有赋值false
+				
+				
+				
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

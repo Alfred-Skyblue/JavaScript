@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			//求两个数的最大值
+			
+			function getarr(x,y) {
+				 if(x>y){
+					 return x;
+				 }else {
+					return y;
+				}
+			//判断x和y的大小,如果x>y则返回x的值,如果x<y,则返回y的值,比较麻烦,纯属练习,请在监护人在场时模仿
+				//简单方法,可以使用三元表达式解决
+			}
+			var max=getarr(20,30);
+			console.log(max);
+			
+			
+			
+			//求3个数中的最大值
+			function threemax(x,y,z) {
+			return	x > y ? (x > z ? x : z) : (y > z ? y : z);//嵌套的三元表达式求三个数最大值,数字较多时,推荐使用循环判断
+			}
+
+			console.log(threemax(60,100,80));
+			
+			
+			
+			//判断一个数是不是质数
+			function Prime(num){
+				for (i=2;i<num;i++){
+					if(num%i==0){//如果判断正确,说明num可以被i整除,这样就验证了它不是质数
+						return false;
+					}
+				}
+				return true;//如果循环结束,没有被i整除,那么这个数字,判定为质数
+			}
+			console.log(Prime(6)?"质数":"不是质数");
+		</script>
+		
+		
+	</head>
+	<body>
+	</body>
+</html>

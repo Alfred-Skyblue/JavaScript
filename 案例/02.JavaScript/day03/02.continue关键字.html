@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			//continue关键字;在循环中如果遇到了continue关键字,直接开始下一次循环
+
+
+
+			/*
+				//案例:求和100-200只见所有的奇数的和(用continue)
+				var sum = 0;
+				var i = 100;
+				while (i <= 200) {
+					if (i % 2 == 0) { //判断是不是偶数
+						i++; //如果是偶数,则跳执行i++,然后跳回循环
+						continue;
+					}
+					sum += i; //如果不是偶数,则执行sum+=i,然后i++,跳回循环.
+					i++; 
+				}
+				console.log(sum)
+				
+			*/
+		/*
+			//案例:求1-100所有数字的和,但是要跳过所有的个位为3的数字
+			var sum = 0;
+			var i = 1;
+			while (i <= 100) {
+				if (i % 10 == 3 || i == 3) { //如果i和10取余等于3,或者i等于3,则执行i++然后跳回while表达式.
+					i++;
+					continue;
+				}
+				sum += i;
+				i++;
+			}
+			console.log(sum)
+		*/
+			
+		/*
+			//求1-100之间所有数字的累加值,要求跳过所有个位数为3的数字
+			var sum=0;
+			for (var i=1;i<=100;i++){
+				
+				if(i%10==3){
+					continue;
+				}
+				sum+=i;
+			}
+			console.log(sum);
+		*/
+	   
+	   
+			//求200-300之间所有奇数的和
+			var sum=0;
+			for (var i=200;i<=300;i++){
+				if(i%2==0){
+					continue;
+				}
+				sum+=i;
+			}
+			console.log(sum);
+			
+			var sum1=0;
+			for (var i=200;i<=300;i++){
+				if(i%2!=0){
+					continue;
+				}
+				sum1+=i;
+			}
+			console.log(sum1);
+			
+			var sum2=0;
+			for (var i=200;i<=300;i++){
+				sum2+=i;
+			}
+			console.log(sum2);
+			
+			var sum3=0;
+			for (var i=1;i<=10;i++){
+				if(i%2==0){
+					continue;
+				}
+				sum3+=i;
+			}
+			console.log(sum3);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
