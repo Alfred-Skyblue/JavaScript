@@ -1,0 +1,94 @@
+
+/* 所有子元素继承ie盒模型 */
+html {
+box-sizing: border-box;
+}
+
+*, *:before, *:after {
+box-sizing: inherit;
+}
+
+
+/**
+ * 清除内外边距
+ */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, 
+strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, 
+tfoot, thead, tr, th, td ,textarea,input { 
+	margin:0; padding:0;  
+	}
+body {
+	background-color: #F8F8F8;
+	color: #333;
+	font-size: 14px;
+	font-family: "微软雅黑";
+}
+.w {
+	max-width: 600px;
+	margin: 0 auto;
+}
+/**
+ * 去除超链接下划线
+ */
+a {
+	text-decoration: none;
+}
+/**
+ * 清除图片的边框
+ */
+img {
+	border:0
+}
+
+/**
+ * 设置标题文字不加粗
+ */
+h1,h2,h3,h4,h5,
+h6, {
+	font-weight: 400;
+}
+
+/**
+ * 清除浮动
+ */
+.clearfix:after {
+	content: "";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden
+}
+/**
+ * 设置input标签后的文字中线对齐
+ * 清除轮廓线
+ */
+input {
+	vertical-align: middle;
+	outline: none;
+}
+/**
+ * 清除列表的默认样式
+ */
+ul,ol{
+	list-style: none
+}
+/**
+ * 清除文字的默认样式转换为行内块
+ */
+b,em,i{
+	display:inline-block;
+	font-weight:normal; 
+	font-style:normal;
+}
+/**
+ * 左浮动
+ */
+.fl{
+	float:left;
+}
+/**
+ * 右浮动
+ */
+.fr{
+	float:right;
+}
