@@ -1,0 +1,25 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: sueRimn
+ * @Date: 2019-12-27 10:11:08
+ * @LastEditors: sueRimn
+ * @LastEditTime: 2019-12-27 10:14:53
+ -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+  </head>
+  <body>
+    <script>
+      var arr = ["Hello", "Ellie", "!"];
+      function arrFn(greeting, name, punctuation) {
+        return greeting + ", " + name + (punctuation || "!");
+      }
+	  var str=arrFn(...arr);
+	  console.log(str);
+    </script>
+  </body>
+</html>
