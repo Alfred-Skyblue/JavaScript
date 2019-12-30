@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+
+		<script>
+			var sayIt = function(greeting, name, punctuation) {
+				return greeting + ', ' + name + (punctuation || '!');
+			};
+			
+			var partial=function (fn,str1,str2) {
+				var result=function (str3) {
+					return fn.call(this,str1,str2,str3);
+				}
+				return result
+			}
+			var f1 = partial(sayIt, 'Hello', 'Ellie')('!!!');
+			console.log(f1);
+			
+			// ES6
+			var partial1=(fn,str1,str2) => str3 =>fn(str1,str2,str3);
+			var f2=partial1(sayIt, 'Hello', 'Ellie')('!!!');
+			console.log(f2);
+		</script>
+
+
+
+	</body>
+</html>

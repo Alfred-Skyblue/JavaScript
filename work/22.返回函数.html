@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script>
+			
+			
+			var funStr=function (str) {
+				return function (str2) {
+					return str+", "+str2;//需要加空格
+				}
+			}
+			
+			var fn1=funStr("Hello")("Nice to meet you");
+			console.log(fn1);// Hello, Nice to meet you
+			
+			
+		</script>
+	</body>
+</html>

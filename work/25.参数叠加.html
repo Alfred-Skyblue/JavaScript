@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			var useArguments = function() {
+				// 使用扩展运算符将arguments转换成数组
+				var arr = [...arguments];
+				// 使用reduce实现数组内部的元素叠加
+				var sumVal = arr.reduce((sum,num) => sum+=num);
+				return sumVal;
+			}
+			var sum = useArguments(1, 2, 3, 4, 5);
+			console.log(sum); // 15
+			
+			// 使用call方法将arguments转换成数组，调用reduce方法叠加，bind和apply同理，也可以使用forEach...
+			var useArguments1=function () {
+				return Array.prototype.slice.call(arguments).reduce((sum,num) => sum+=num);
+			}
+			
+			var sum1 = useArguments1(1, 2, 3, 4, 5);
+			console.log(sum1); // 15
+		</script>
+	</body>
+</html>

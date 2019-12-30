@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+
+
+		<script>
+			var arr = [6, 5, 4, 3];
+
+			function makeClosures(arr, fn) {
+				var result = [];
+				for (let i = 0; i < arr.length; i++) {
+					
+					result[i] = function() {
+						console.log(arr[i]);
+						return fn(arr[i]); //let声明的变量只在let所在代码块内有效，因此每次循环的i都是一个新的变量           
+					};
+				}
+				return result;
+			}
+			var f1=makeClosures(arr, function (num) {
+				var sum=num*num
+				console.log(sum);
+				return sum;
+			});
+			f1[3]();
+
+			// JavaScript高级中有记录
+			function makeClosures2(arr, fn) {
+				var result = [];
+				for (var i = 0; i < arr.length; i++) {
+					result[i] = function(num) {
+						// 立即执行函数，将每次循环将arr[i]的值传入
+						return function() {
+							return fn(num);
+						}
+					}(arr[i]);
+				}
+				return result;
+			}
+
+			var f2 = makeClosures2(arr, function(num) {
+				console.log(num);
+			});
+			f2[1]();
+
+			// 使用forEach方法
+			function makeClosures3(arr, fn) {
+				var result = [];
+				arr.forEach(function(item) {
+					result.push(function() {
+						return fn(item);
+					});
+				})
+				return result;
+			}
+
+
+			var f3 = makeClosures3(arr, function(num) {
+				console.log(num);
+			});
+			f3[2]();
+		</script>
+
+
+	</body>
+</html>

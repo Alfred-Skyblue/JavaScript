@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		
+		<script>
+			
+			
+			var callIt=function(fn) {
+			    //将arguments转化为数组，截取第一个元素之后的所有元素
+			    var args = [...arguments].slice(1);
+			    //调用fn
+			    var result = fn.apply(null,args);
+			    return result;
+			}
+			
+			callIt(function () {
+				console.log(...arguments);// 1 2 3
+			},1,2,3);
+			
+			
+		</script>
+	</body>
+</html>

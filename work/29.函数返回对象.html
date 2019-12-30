@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		
+		<script>
+			
+			var fnObj=function (str1,str2) {
+				var obj={
+					greeting:str1,
+					name:str2,
+					sayIt:function () {
+						return this.greeting+", "+this.name;
+					}
+				}
+				return obj;
+			}
+			var per=fnObj("你好","小明");
+			
+			console.log(per);
+			console.log(per.sayIt());
+			
+		</script>
+	</body>
+</html>
