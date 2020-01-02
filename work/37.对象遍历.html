@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			
+			var C = function() {this.foo = 'bar'; this.baz = 'bim';}; 
+			C.prototype.bop = 'bip'; 
+			// Object.getOwnPropertyNames()方法在给定对象上找到的自身属性对应的字符串数组，不包含原型中的属性和方法
+			var iterate=function (obj) {
+				return Object.getOwnPropertyNames(obj).map(function(key){
+				        return key+": "+obj[key];
+				    });
+			}
+			console.log(iterate(new C()));;
+			
+			
+			
+			function iterate1(obj) {
+				// Object.keys()方法要返回其枚举自身属性的对象
+			    var arr=Object.keys(obj);
+			    var arr1=[];
+			    arr.forEach(function(item){
+			        arr1.push(item+': '+obj[item]);
+			    })
+			    return arr1;
+			}
+			console.log(iterate1(new C()));;
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		
+		<script>
+			var str='rattler';
+			
+			var containsRepeatingLetter=function (str) {
+				// \1表示匹配第一组正则匹配到的内容
+				return /([a-zA-Z])\1/.test(str);
+			}
+			
+			containsRepeatingLetter(str);
+			
+		</script>
+	</body>
+</html>

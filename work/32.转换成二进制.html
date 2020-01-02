@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script>
+			
+			var binarySystem=function (num) {
+				var str=num.toString(2);
+				while (str.length<8){
+					str="0"+str;
+				}
+				return str;
+			}
+			var str=binarySystem(65);
+			console.log(binarySystem(65));
+			console.log("01000001");
+		var num=65;
+			console.log(num.toString(2));
+		</script>
+		
+	</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+
+		<script>
+			var alterContext = function(fn, obj) {
+				return fn.call(obj);
+			}
+			
+			console.log(alterContext(function() {
+				return this.greeting + ', ' + this.name + '!';
+			}, {
+				name: 'Rebecca',
+				greeting: 'Yo'
+			}));// Yo, Rebecca!
+			
+		</script>
+
+	</body>
+</html>

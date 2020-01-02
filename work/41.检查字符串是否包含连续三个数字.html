@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		
+		<script>
+			
+			var str='9876543';
+			function captureThreeNumbers(str) {
+				// match() 方法可在字符串内检索指定的值，或找到一个或多个正则表达式的匹配。
+			    var arr = str.match(/\d{3}/);
+				console.log(arr);
+			    return (arr && arr[0]) || false;
+			}
+			
+			console.log(captureThreeNumbers(str));
+			
+			
+		</script>
+	</body>
+</html>
